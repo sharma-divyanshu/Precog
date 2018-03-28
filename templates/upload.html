@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>#PrecogTask</title>
+</head>
+<body>
+<h1>#PrecogTask: Facial Recognition</h1>
+<div align = "center">
+<form id="upload-form" action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+    <input id="file-picker" type="file" name="file" accept="image/*" multiple>
+    <input type="submit" value="Upload" id="upload-button">
+</form>
+</div>
+<div align="center">
+<table border="2px">
+  <tr>
+      <td align="center">Image</td>
+      <td align="center">Test Conditions</td>
+      <td align="center">Output</td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="3"> <img src="{{source}}" height="150" onerror=></td>
+    <td align="center" width="200">Faces Present: </td>
+    <td align="center" width="200">{{nb_faces}}</td>
+  </tr>
+  <tr>
+    <td align="center" width="200">Arvind Kejriwal: </td>
+    <td align="center" width="200">{{kejriwal}}</td>
+  </tr>
+   <tr>
+    <td align="center" width="200">Narendra Modi: </td>
+    <td align="center" width="200">{{modi}}</td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
