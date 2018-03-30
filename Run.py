@@ -21,12 +21,22 @@ def upload():
     filename = file.filename
     location = "".join([target, filename])
     file.save(location)
+    nb_faces = 'None'
     nb_faces, source = detect_faces(location, filename)
-    if nb_faces == 0:
-        nb_faces = "None"
-    else:
-        modi = isModi(location, filename)
-        kejriwal = isKejriwal(location, filename)
+    modi = 'No'
+    kejriwal = 'No'
+#    if nb_faces == 0:
+#        nb_faces = "None"
+#    elif nb_faces==1:
+#        modi = isModi(location, filename)
+#        if modi=='No':
+#            kejriwal = isKejriwal(location, filename)
+#    else:
+    modi = isModi(location, filename)
+    kejriwal = isKejriwal(location, filename)
+    if (modi == 'Yes') or (kejriwal == 'Yes'):
+        nb_faces = 'Yes'
+    
     source = str(source)
     return render_template("upload.html", nb_faces=nb_faces, source=source, modi=modi, kejriwal=kejriwal)
 
