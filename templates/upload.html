@@ -1,24 +1,28 @@
 <html>
 <head>
 <title>#PrecogTask</title>
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
 </head>
 <body>
-<h1>#PrecogTask: Facial Recognition</h1>
+<div id="header"><h1>#PrecogTask: Facial Recognition</h1>
+</div>
 <div align = "center">
+<br>
 <form id="upload-form" action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
     <input id="file-picker" type="file" name="file" accept="image/*" multiple>
     <input type="submit" value="Upload" id="upload-button">
 </form>
 </div>
+<br>
 <div align="center">
-<table border="2px">
+<table border="1px">
   <tr>
-      <td align="center">Image</td>
-      <td align="center">Test Conditions</td>
-      <td align="center">Output</td>
+      <th align="center">Image</th>
+      <th align="center">Test Conditions</th>
+      <th align="center">Output</th>
   </tr>
   <tr>
-    <td align="center" rowspan="3"> <img src="{{source}}" height="150" onerror=></td>
+    <td align="center" rowspan="3"> <img src="{{source}}" height="150"></td>
     <td align="center" width="200">Faces Present: </td>
     <td align="center" width="200">{{nb_faces}}</td>
   </tr>

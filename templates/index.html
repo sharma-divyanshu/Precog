@@ -1,9 +1,11 @@
 <html>
 <head>
 <title>#PrecogTask</title>
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
 </head>
 <body>
-<h1 style="color=powderblue">#PrecogTask: Facial Recognition</h1>
+<div id="header"><h1 style="color=powderblue">#PrecogTask: Facial Recognition</h1></div>
+<br>
 <div align = "center">
 <form id="upload-form" action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
     <input id="file-picker" type="file" name="file" accept="image/*" multiple>
