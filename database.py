@@ -3,11 +3,10 @@ import os
 import pymongo
 import gridfs
 
-directory = "dataset/modi/test/positive"
+directory = "dataset/kejriwal/test/positive"
+category = "kejriwal"
 data = "test"
 tag = "positive"
-category = "modi"
-
 
 client = pymongo.MongoClient()
 db = client.precog_dataset
