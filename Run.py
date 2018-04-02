@@ -41,4 +41,4 @@ def upload():
     return render_template("upload.html", nb_faces=nb_faces, source=source, modi=modi, kejriwal=kejriwal)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=4555)
+    app.run()
