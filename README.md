@@ -38,7 +38,7 @@ The initial task was divided into 4 parts:
   --dataset.rar  //Dataset compressed archive
 --haarcascades  //haarcascade .xml model
 +-static
-  +--images
+  +-images
     --uploaded  //contains user uploaded images
     --processed  //contains images with faces detected
   --styles
