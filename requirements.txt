@@ -3,3 +3,4 @@ Keras
 tensorflow
 opencv-python
 numpy
+libgtk2.0-dev
