@@ -1,0 +1,6 @@
+Flask
+Keras
+tensorflow
+opencv-python
+numpy
+os
