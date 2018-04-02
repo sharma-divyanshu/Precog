@@ -14,7 +14,7 @@ def index():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-    target = os.path.join(app_dir, 'images/')
+    target = os.path.join(app_dir, 'static/images/uploaded/')
     if not os.path.isdir(target):
         os.mkdir(target)
     file = request.files["file"]
