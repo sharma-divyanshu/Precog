@@ -34,7 +34,7 @@ def upload():
 #    else:
     modi = isModi(location, filename)
     kejriwal = isKejriwal(location, filename)
-    if (modi == 'Yes') or (kejriwal == 'Yes'):
+    if (modi == 'Yes') or (kejriwal == 'Yes') and (nb_faces == 0):
         nb_faces = 'Yes'
     
     source = str(source)
