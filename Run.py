@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 app_dir = os.path.dirname(os.path.abspath("__file__"))
 
-UPLOAD_FOLDER = '/static/etc/uploaded'
+UPLOAD_FOLDER = 'static/etc/uploaded'
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -17,7 +17,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def index():
     return render_template("index.html")
 
-@app.route("/upload", methods=['GET', 'POST'])
+@app.route("/upload", methods=['POST'])
 def upload():
     target = os.path.join(app_dir, 'static/etc/uploaded/')
     if not os.path.isdir(target):
