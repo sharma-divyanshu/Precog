@@ -50,3 +50,7 @@ The initial task was divided into 4 parts:
 --Run.py  //contains Flask code
 --wsgi.py  //Runs the WSGI application
 ```
+
+<b>Area of Improvement:</b>
+
+The face detection process can be optimized by implementing a condition which runs the CNN prediction only if faces are detected by the haar cascade. However, by experimentation, it has been observed that the CNNs have a higher probability to recognize faces and predict the correct person, whereas the haar classifier often misses faces due to obstacles in the image. Therefore, the condition has not been implemented. 
