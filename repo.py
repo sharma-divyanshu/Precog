@@ -12,7 +12,7 @@ def detect_faces(location, filename):
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
     for (x,y,w,h) in faces:
         cv2.rectangle(process_img, (x,y), (x+w, y+h), (255,255,0), 1)
-    processed_images = "static/images/processed/"
+    processed_images = "static/etc/"
     if not os.path.isdir(processed_images):
         os.mkdir(processed_images)
     cv2.imwrite(processed_images + filename, process_img)
