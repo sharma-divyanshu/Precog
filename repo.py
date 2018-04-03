@@ -3,7 +3,9 @@ import cv2
 import numpy as np
 from keras.preprocessing import image
 from keras.models import load_model
+from keras import backend as K
 import h5py
+import tensorflow as tf
 
 def detect_faces(location, filename, app_dir):
     face_cascade = cv2.CascadeClassifier(os.path.join(app_dir, 'haarcascades/haarcascade_frontalface_default.xml'))
@@ -26,6 +28,7 @@ def isModi(location, filename, app_dir):
     test_image = image.img_to_array(test_image)
     test_image = np.expand_dims(test_image, axis = 0)
     result = classifier.predict(test_image)
+    K.clear_session()
     if result[0,0] == 1:
         return 'Yes'
     else:
@@ -38,6 +41,7 @@ def isKejriwal(location, filename, app_dir):
     test_image = image.img_to_array(test_image)
     test_image = np.expand_dims(test_image, axis = 0)
     result = classifier.predict(test_image)
+    K.clear_session()
     if result[0,0] == 1:
         return 'Yes'
     else:
