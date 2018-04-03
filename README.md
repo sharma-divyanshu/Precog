@@ -50,7 +50,14 @@ The initial task was divided into 4 parts:
 --Run.py  //contains Flask code
 --wsgi.py  //Runs the WSGI application
 ```
+<b>Deployment:</b>
 
+<ul><li>The application was deployed on a Google Cloud Platform virtual machine running Ubuntu 14.04 using mod_wsgi, as prevalent app hosting websites do not provide complete support for OpenCV/Tensorflow and related dependencies.
+  <li>The web app is live at `http://35.231.212.9`
+  
 <b>Area of Improvement:</b>
+<ul>
+<li>The face detection process can be optimized by implementing a condition which runs the CNN prediction only if faces are detected by the haar cascade. However, by experimentation, it has been observed that the CNNs have a higher probability to recognize faces and predict the correct person, whereas the haar classifier often misses faces due to obstacles in the image. Therefore, the condition has not been implemented. 
+<li>The classification models can be further improved by training over a larger dataset.
 
-The face detection process can be optimized by implementing a condition which runs the CNN prediction only if faces are detected by the haar cascade. However, by experimentation, it has been observed that the CNNs have a higher probability to recognize faces and predict the correct person, whereas the haar classifier often misses faces due to obstacles in the image. Therefore, the condition has not been implemented. 
+<b>Screenshots:</b>
