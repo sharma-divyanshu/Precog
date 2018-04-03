@@ -3,3 +3,4 @@ Keras
 numpy
 tensorflow
 tensorflow-tensorboard
+opencv-python
