@@ -1,3 +1,5 @@
+pillow
+h5py
 Flask
 Keras
 numpy
