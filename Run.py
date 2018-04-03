@@ -1,25 +1,30 @@
 import os
 from flask import Flask, render_template, request
+from werkzeug.utils import secure_filename
 from repo import detect_faces, isModi, isKejriwal
 
 # creating the webpage
 
 app = Flask(__name__)
 
-app_dir = os.path.dirname(__file__)
+app_dir = os.path.dirname(os.path.abspath("__file__"))
+
+UPLOAD_FOLDER = '/static/etc/uploaded'
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/upload", methods=['POST'])
+@app.route("/upload", methods=['GET', 'POST'])
 def upload():
     target = os.path.join(app_dir, 'static/etc/uploaded/')
     if not os.path.isdir(target):
         os.mkdir(target)
-    file = request.files["file"]
-    filename = file.filename
-    location = "".join([target, filename])
+    file = request.files['file']
+    filename = secure_filename(file.filename)
+    location = "".join([target, file.filename])
     file.save(location)
     nb_faces = 'None'
     nb_faces, source = detect_faces(location, filename)
