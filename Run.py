@@ -6,7 +6,7 @@ from repo import detect_faces, isModi, isKejriwal
 
 app = Flask(__name__)
 
-app_dir = os.path.dirname(os.path.abspath("__file__"))
+app_dir = os.path.dirname(__file__)
 
 @app.route("/")
 def index():
@@ -14,7 +14,7 @@ def index():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-    target = os.path.join(app_dir, 'images/uploaded/')
+    target = os.path.join(app_dir, 'static/etc/uploaded/')
     if not os.path.isdir(target):
         os.mkdir(target)
     file = request.files["file"]
