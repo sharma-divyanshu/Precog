@@ -7,10 +7,9 @@ from repo import detect_faces, isModi, isKejriwal
 
 app = Flask(__name__)
 
-app_dir = os.path.dirname(os.path.abspath("__file__"))
+app_dir = os.path.dirname(os.path.abspath(__file__))
 
 UPLOAD_FOLDER = 'static/etc/uploaded'
-
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route("/")
@@ -20,14 +19,14 @@ def index():
 @app.route("/upload", methods=['POST'])
 def upload():
     target = os.path.join(app_dir, 'static/etc/uploaded/')
-    if not os.path.isdir(target):
-        os.mkdir(target)
+#    if not os.path.isdir(target):
+#        os.mkdir(target)
     file = request.files['file']
     filename = secure_filename(file.filename)
-    location = "".join([target, file.filename])
+    location = target + filename
     file.save(location)
     nb_faces = 'None'
-    nb_faces, source = detect_faces(location, filename)
+    nb_faces, source = detect_faces(location, filename, app_dir)
     modi = 'No'
     kejriwal = 'No'
 #    if nb_faces == 0:
@@ -37,8 +36,8 @@ def upload():
 #        if modi=='No':
 #            kejriwal = isKejriwal(location, filename)
 #    else:
-    modi = isModi(location, filename)
-    kejriwal = isKejriwal(location, filename)
+    modi = isModi(location, filename, app_dir)
+    kejriwal = isKejriwal(location, filename, app_dir)
     if (modi == 'Yes') or (kejriwal == 'Yes') and (nb_faces == 0):
         nb_faces = 'Yes'
     
