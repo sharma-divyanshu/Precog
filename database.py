@@ -3,8 +3,8 @@ import os
 import pymongo
 import gridfs
 
-directory = "dataset/kejriwal/test/positive"
-category = "kejriwal"
+directory = "dataset/modi/test/positive"
+category = "modi"
 data = "test"
 tag = "positive"
 
