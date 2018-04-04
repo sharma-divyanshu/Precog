@@ -62,10 +62,7 @@ The initial task was divided into 4 parts:
 </ul>
 <b>Screenshots:</b>
 
-![index](/screenshots/1.PNG)
-
-![Both](/screenshots/1.png)
-
-![None](/screenshots/3.png)
-
-![Both](/screenshots/4.png)
+<p><img src="https://github.com/sharma-divyanshu/Precog/blob/master/screenshots/2.PNG?raw=true"></p>
+<p><img src="https://github.com/sharma-divyanshu/Precog/blob/master/screenshots/1.PNG?raw=true"></p>
+<p><img src="https://github.com/sharma-divyanshu/Precog/blob/master/screenshots/3.PNG?raw=true"></p>
+<p><img src="https://github.com/sharma-divyanshu/Precog/blob/master/screenshots/4.PNG?raw=true"></p>
