@@ -61,3 +61,11 @@ The initial task was divided into 4 parts:
 <li>The classification models can be further improved by training over a larger dataset.
 </ul>
 <b>Screenshots:</b>
+
+![index](/screenshots/1.PNG)
+
+![Both](/screenshots/1.png)
+
+![None](/screenshots/3.png)
+
+![Both](/screenshots/4.png)
