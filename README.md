@@ -8,7 +8,7 @@ The web application inputs an image from the user, draws a boundary box around a
 
 <b>Libraries Used:</b>
 
-<ol><li>The system has been deployed as a web application using Flask. The application runs @ 127.0.0.1:4555
+<ol><li>The system has been deployed as a web application using Flask. The application runs @ 127.0.0.1:5000
 <li>Face detection is performed using Haar cascades, part of the OpenCV library.
 <li>Once faces are detected, prediction whether the faces belong to Modi or Kejriwal is made based on two CNNs trained on a dataset of images belonging to the two individuals.</ol>
 
@@ -52,9 +52,12 @@ The initial task was divided into 4 parts:
 ```
 <b>Deployment:</b>
 
-<ul><li>The application was deployed on a Google Cloud Platform virtual machine running Ubuntu 14.04 using mod_wsgi, as prevalent app hosting websites do not provide complete support for OpenCV/Tensorflow and related dependencies.
-  <li>The web app is live at `http://35.231.212.9`
- </ul>
+The application was deployed on a Google Cloud Platform virtual machine running Ubuntu 14.04 using mod_wsgi, as prevalent app hosting websites do not provide complete support for OpenCV/Tensorflow and related dependencies.
+
+The web app is live [here](http://35.231.212.9)
+
+The app can be run locally at `localhost:5000` by executing the `__init__.py` file.
+ 
 <b>Area of Improvement:</b>
 <ul>
 <li>The face detection process can be optimized by implementing a condition which runs the CNN prediction only if faces are detected by the haar cascade. However, by experimentation, it has been observed that the CNNs have a higher probability to recognize faces and predict the correct person, whereas the haar classifier often misses faces due to obstacles in the image. Therefore, the condition has not been implemented. 
