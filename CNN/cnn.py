@@ -8,7 +8,7 @@ from keras import backend as kb
 training_set = '../dataset/kejriwal/train'
 test_set = '../dataset/kejriwal/test'
 
-epochs = 36
+epochs = 35
 batch_size = 64
 
 train_samples = 900
@@ -22,7 +22,7 @@ else:
 
 classifier = Sequential()
 
-classifier.add(Conv2D(64, (3, 3), input_shape=(h, w, 3)))
+classifier.add(Conv2D(128, (3, 3), input_shape=(h, w, 3)))
 classifier.add(Activation('relu'))
 classifier.add(MaxPooling2D(pool_size=(2, 2)))
 
