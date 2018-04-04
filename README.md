@@ -30,25 +30,27 @@ The initial task was divided into 4 parts:
 +-CNN  //CNN train/test algorithm
   --cnn.py
 +-dataset 
-  +-precog_dataset_json  //MongoDB dump
+  +-precog_dataset  //MongoDB dump
     --fs.chunks.bson
     --fs.chunks.metadata.bson
     --fs.files.bson
     --fs.files.metadata.json
   --dataset.rar  //Dataset compressed archive
---haarcascades  //haarcascade .xml model
++-haarcascades  //haarcascade .xml model
 +-static
-  +-images
-    --uploaded  //contains user uploaded images
-    --processed  //contains images with faces detected
-  --styles
+  +-etc
+    +-images
+      +-uploaded  //contains user uploaded images
+  +-images  //contains images with faces detected and marked
+  +-styles  //contains css
 +-templates
   --index.html
   --upload.html
 --database.py  //used for uploading dataset images to MongoDB collection
 --repo.py  //contains face detection/recognition functions
 --Run.py  //contains Flask code
---wsgi.py  //Runs the WSGI application
+--__init__.py  //Runs the WSGI application
+--requirements.txt  //specifies dependencies
 ```
 <b>Deployment:</b>
 
@@ -59,10 +61,9 @@ The web app is live [here](http://35.231.212.9)
 The app can be run locally at `localhost:5000` by executing the `__init__.py` file.
  
 <b>Area of Improvement:</b>
-<ul>
-<li>The face detection process can be optimized by implementing a condition which runs the CNN prediction only if faces are detected by the haar cascade. However, by experimentation, it has been observed that the CNNs have a higher probability to recognize faces and predict the correct person, whereas the haar classifier often misses faces due to obstacles in the image. Therefore, the condition has not been implemented. 
-<li>The classification models can be further improved by training over a larger dataset.
-</ul>
+
+The face detection process can be optimized by implementing a condition which runs the CNN prediction *only if* faces are detected by the haar cascade. However, by experimentation, it has been observed that the CNNs have a higher probability to recognize faces and predict the correct person, whereas the haar classifier often misses faces due to obstacles in the image. Therefore, the condition has not been implemented. For now, the prediction models run even if the classifier does not detect any faces.
+
 <b>Screenshots:</b>
 
 <p><img src="https://github.com/sharma-divyanshu/Precog/blob/master/screenshots/2.PNG?raw=true"></p>
