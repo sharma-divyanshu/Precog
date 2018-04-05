@@ -4,7 +4,7 @@ A Python based face detection/classification web application developed as a task
 
 <b>Overview:</b>
 
-The web application inputs an image from the user, draws a boundary box around any faces in the image, and evaluates whether they belong to Arvind Kejriwal and Narendra Modi.
+The web application inputs an image from the user, draws a boundary box around any faces in the image, and evaluates whether they belong to Arvind Kejriwal or Narendra Modi.
 
 <b>Libraries Used:</b>
 
