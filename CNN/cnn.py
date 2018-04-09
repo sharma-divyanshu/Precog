@@ -5,8 +5,8 @@ from keras.models import load_model, model_from_yaml
 from keras.preprocessing.image import ImageDataGenerator
 from keras import backend as kb
 
-training_set = '../dataset/kejriwal/train'
-test_set = '../dataset/kejriwal/test'
+training_set = '../dataset/modi/train'
+test_set = '../dataset/modi/test'
 
 epochs = 35
 batch_size = 64
@@ -72,7 +72,7 @@ classifier.fit_generator(train_generator,
 
 
 
-classifier.save('../classifiers/kejriwal.h5')
+classifier.save('../classifiers/modi.h5')
 #
 #import numpy as np
 #from keras.preprocessing import image
