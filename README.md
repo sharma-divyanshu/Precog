@@ -4,7 +4,7 @@ A Python based face detection/classification web application developed as a task
 
 <b>Overview:</b>
 
-The web application inputs an image from the user, draws a boundary box around any faces in the image, and evaluates whether they belong to Arvind Kejriwal and Narendra Modi.
+The web application inputs an image from the user, draws a boundary box around any faces in the image, and evaluates whether they belong to Arvind Kejriwal or Narendra Modi.
 
 <b>Libraries Used:</b>
 
@@ -56,7 +56,7 @@ The initial task was divided into 4 parts:
 
 The application was deployed on a Google Cloud Platform virtual machine running Ubuntu 14.04 using mod_wsgi, as prevalent app hosting websites do not provide complete support for OpenCV/Tensorflow and related dependencies.
 
-The web app is live [here](http://35.231.212.9)
+The web app is live [here](http://104.196.99.4/)
 
 The app can be run locally at `localhost:5000` by executing the `__init__.py` file.
  
