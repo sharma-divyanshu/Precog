@@ -1,13 +1,16 @@
 import os
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
-from repo import detect_faces, isModi, isKejriwal
+from repo import detect_faces, isModi, isKejriwal, loadClassifier
+from keras import backend as K
 
 # creating the webpage
 
 app = Flask(__name__)
 
 app_dir = os.path.dirname(os.path.abspath(__file__))
+
+graph, classifier_nm, classifier_ak = loadClassifier(app_dir)
 
 UPLOAD_FOLDER = 'static/etc/uploaded'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -36,8 +39,10 @@ def upload():
 #        if modi=='No':
 #            kejriwal = isKejriwal(location, filename)
 #    else:
-    modi = isModi(location, filename, app_dir)
-    kejriwal = isKejriwal(location, filename, app_dir)
+    with graph.as_default():
+        modi = isModi(location, filename, app_dir, classifier_nm)
+        kejriwal = isKejriwal(location, filename, app_dir, classifier_ak)
+#    K.clear_session()
     if (modi == 'Yes') or (kejriwal == 'Yes') and (nb_faces == 0):
         nb_faces = 'Yes'
     
