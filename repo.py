@@ -22,9 +22,9 @@ def detect_faces(location, filename, app_dir):
     return len(faces), 'static/images/' + str(filename)
 
 def loadClassifier(app_dir):
-    classifier_nm = load_model(os.path.join(app_dir, 'classifiers/modi.h5'))
+    classifier_nm = load_model(os.path.join(app_dir, 'classifiers/modi_wo.h5'))
     classifier_nm.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-    classifier_ak = load_model(os.path.join(app_dir, 'classifiers/kejriwal.h5'))
+    classifier_ak = load_model(os.path.join(app_dir, 'classifiers/kejriwal_wo.h5'))
     classifier_ak.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
     graph = tf.get_default_graph()
     return graph, classifier_nm, classifier_ak

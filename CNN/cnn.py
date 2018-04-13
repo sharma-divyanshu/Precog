@@ -72,7 +72,7 @@ classifier.fit_generator(train_generator,
 
 
 
-classifier.save('../classifiers/modi.h5')
+classifier.save('../classifiers/modi_wo.h5', include_optimizer=False)
 #
 #import numpy as np
 #from keras.preprocessing import image
