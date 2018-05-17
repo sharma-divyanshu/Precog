@@ -1,6 +1,6 @@
 # PrecogTask
 
-A Python based face detection/classification web application developed as a task for Precog, IIIT Delhi.
+A Python based face detection/classification web application.
 
 <b>Overview:</b>
 
